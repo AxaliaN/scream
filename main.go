@@ -1,21 +1,23 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	"strings"
+"fmt"
+"os"
+"strings"
 )
 
 func main() {
-	args := os.Args[1:]
+    args := os.Args[1:]
 
-	for _, word := range args {
-		letters := strings.Split(word, "")
+    for i := 0; i < len(args); i++ {
+        letters := strings.Split(args[i], "")
 
-		for _, letter := range letters {
-			fmt.Print(":alphabet-white-" + letter + ":")
-		}
+        for _, letter := range letters {
+            fmt.Print(":alphabet-white-" + letter + ":")
+        }
 
-		fmt.Print("  ")
-	}
+        if i != (len(args) - 1) {
+            fmt.Print("  ")
+        }
+    }
 }
